@@ -1,0 +1,386 @@
+%bszbb
+	@include box-sizing(border-box)
+
+%center
+	padding: 0 $page_side-space
+	max-width: $page_w_max
+	margin: auto
+
+/* clearfix
+/* --------------------------------------------- */
+
+
+%clear
+	&:before,
+	&:after
+		display: table
+		content: ''
+		clear: both
+	&:after
+		clear: both
+
+.clearfix-block
+	clear: both
+	overflow: hidden
+	margin: 0
+	padding: 0
+	font-size: 0
+	line-height: 0
+
+.clearfix 
+	&:before,
+	&:after
+		display: table
+		content: ''
+		clear: both
+	&:after
+		clear: both
+
+
+/* clearfix
+/* ---------------------------------------END--- */
+
+%center
+	max-width: $page_w
+	margin: auto
+
+
+/* page
+/* --------------------------------------------- */
+
+.page
+	position: relative
+	background: $color_bg
+	padding-bottom: 1px
+
+	img
+		max-width: 100%
+		height: auto
+
+	&__header
+		
+
+		
+/* page
+/* ---------------------------------------END--- */
+
+
+/* cools
+/* --------------------------------------------- */
+
+.cools
+	@extend %center
+	display: flex
+	&__i
+		width: 50%
+		&_main
+			width: 65%
+			padding-right: ($section_space/2)
+		&_sidebar
+			width: 45%
+			padding-left: ($section_space/2)
+
+/* cools
+/* ---------------------------------------END--- */
+
+
+/* section
+/* --------------------------------------------- */
+
+.section
+	background: #fff
+	padding: $section_space
+	border-radius: 10px
+	margin-bottom: $section_space
+	box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.2)
+
+/* section
+/* ---------------------------------------END--- */
+
+
+/* header
+/* --------------------------------------------- */
+
+.header
+	background: #fff
+	border-bottom: 1px solid $color_main
+	box-shadow: 0 0 4px rgba(0, 0, 0, 0.4)
+	margin-bottom: 20px
+	position: relative
+
+	&__body
+		@extend %center
+
+
+	&__nav
+		@extend %center
+		position: relative
+
+/* header
+/* ---------------------------------------END--- */
+
+
+/* footer
+/* --------------------------------------------- */
+
+.footer
+	background: #fff
+	border-top: 4px solid $color_main
+	overflow: hidden
+	position: relative
+	padding-top: 26px
+	padding-bottom: 26px
+
+	&__body
+		@extend %center
+		display: flex
+
+	&__i
+		&_copyrigth
+			width: 40%
+
+		&_counters
+			width: 100px
+			padding-top: 5px
+
+		&_made-by
+			margin-left: auto
+			text-align: right
+
+
+
+/* footer
+/* ---------------------------------------END--- */
+
+
+/* nav-ctrl
+/* --------------------------------------------- */
+
+.nav-ctrl
+	display: none
+	width: $nav_ctrl_dim
+	height: $nav_ctrl_dim
+	//background: red
+	vertical-align: middle
+	cursor: pointer
+	position: fixed
+	z-index: 101
+	top: 0
+	right: 10px
+
+	+max-screen($mq_menu)
+		display: inline-block
+
+	&__body
+		position: absolute
+		width: 40px
+		height: 28px
+		top: 50%
+		margin-top: -14px
+		left: 50%
+		margin-left: -20px
+		//background: red
+	
+	&__i
+		width: 40px
+		height: 4px
+		background: $color_main
+		position: absolute
+		left: 0
+		+transition-duration(.5s)
+		+transform-origin(left, center)
+
+
+		&_tp_top
+			top: 0
+			.is-open &
+				top: -2px
+				left: 6px
+				+rotate(45deg)
+
+		&_tp_middle
+			top: 12px
+			.is-open &
+				left: -15px
+				+opacity(0)
+
+		&_tp_bottom
+			bottom: 0
+			.is-open &
+				bottom: -2px
+				left: 6px
+				+rotate(-45deg)
+
+/* nav-ctrl
+/* ---------------------------------------END--- */
+
+
+/* main-nav
+/* --------------------------------------------- */
+
+.main-nav
+	position: relative
+	z-index: 2
+
+	+max-screen($mq_menu)
+		position: fixed
+		top: 0
+		left: 0
+		background: #fff
+		z-index: 100
+		width: 100%
+		display: none
+		border-bottom: 2px solid $color_main
+		box-shadow: 0 0 25px rgba(0, 0, 0, 0.6)
+		padding-top: $nav_ctrl_dim
+
+	&.is-open
+		display: block !important
+	
+	&__lst
+		margin: 0
+		padding: 0
+		list-style-type: none
+		display: table
+		width: 100%
+
+		+max-screen($mq_menu)
+			display: block
+		
+	&__i
+		margin: 0
+		padding: 0
+		display: table-cell
+		vertical-align: middle
+		position: relative
+
+		+max-screen($mq_menu)
+			display: block
+
+	& &__a
+		display: block
+		height: $nav_h
+		line-height: $nav_h
+		text-align: center
+		padding: 0 25px
+		white-space: nowrap
+		outline: none
+		+link-color ($color: $color_text, $color_hover: #fff, $color_visited: none)
+		+transition-property(background)
+		text-transform: uppercase
+		+rem(font-size, 14px)
+		@extend %font-sb
+		border: none
+
+		+max-screen($mq_menu)
+			height: 55px
+			line-height: 55px
+			text-align: center
+
+	&__i:hover &__a,
+	&__i_open &__a
+		background: $color_main
+		+transition-duration(.1s)
+
+	&__i_extra &__a
+		color: $color_main
+		+link-color ($color: $color_main, $color_hover: #fff, $color_visited: none)
+		+max-screen($mq_menu)
+			+link-color ($color: $color_main, $color_hover: #fff, $color_visited: none)
+
+	&__i_active &__a
+		&:before
+			content: ''
+			display: block
+			position: absolute
+			left: 0
+			right: 0
+			bottom: 0
+			height: 6px
+			background: $color_main
+
+			+max-screen($mq_menu)
+				display: none
+
+		+max-screen($mq_menu)
+			
+
+	&__i_active &__txt
+		display: inline-block
+		line-height: 3
+		position: relative
+		&:before
+			content: ''
+			display: none
+			position: absolute
+			left: 0
+			right: 0
+			bottom: 0
+			height: 6px
+			background: $color_main
+			+max-screen($mq_menu)
+				display: block
+
+
+/* main-nav
+/* ---------------------------------------END--- */
+
+
+/* svg-icons
+/* --------------------------------------------- */
+
+#svg-icons
+	position: absolute
+	top: 0
+	left: 0
+	height: 0
+	width: 0
+	z-index: -100
+
+
+/* svg-icons
+/* ---------------------------------------END--- */
+
+
+/* counters
+/* --------------------------------------------- */
+
+.counters
+	&__i
+		margin-bottom: 10px
+
+	a
+		display: block
+		border-bottom: none
+
+/* counters
+/* ---------------------------------------END--- */
+
+
+/* teasers
+/* --------------------------------------------- */
+
+.teasers
+	margin: 0
+	padding: 0
+	list-style-type: none
+
+	&__i
+		margin: 0
+		padding: 0
+		list-style-type: none
+		display: flex
+	
+	&__photo
+		
+
+	&__body
+		width: 100%		
+
+	&__h
+		
+	&__date
+		
+
+/* teasers
+/* ---------------------------------------END--- */
