@@ -71,14 +71,34 @@
 .cools
 	@extend %center
 	display: flex
+	+max-screen($mq_menu)
+		display: block
+
 	&__i
 		width: 50%
+		+max-screen($mq_menu)
+			width: auto
+
 		&_main
 			width: 65%
 			padding-right: ($section_space/2)
+			+max-screen($mq_menu)
+				width: auto
+				padding-right: 0
+
 		&_sidebar
-			width: 45%
+			width: 35%
 			padding-left: ($section_space/2)
+			+max-screen($mq_menu)
+				width: auto
+				padding-left: 0
+
+	&__photo
+		margin-left: - $section_space
+		margin-right: - $section_space
+		margin-top: - $section_space
+		+max-screen($mq_menu)
+			margin: 0
 
 /* cools
 /* ---------------------------------------END--- */
@@ -110,13 +130,107 @@
 
 	&__body
 		@extend %center
-
+		display: flex
+		align-items: center
+		+max-screen($mq_menu)
+			flex-wrap: wrap
 
 	&__nav
 		@extend %center
 		position: relative
 
+	&__body-i
+		padding-top: 25px
+		padding-bottom: 25px
+
+		&_logo
+			width: 157px
+			+max-screen($mq_menu)
+				padding-top: 10px
+				padding-bottom: 10px
+
+		&_org-name
+			width: 320px
+			padding-left: 15px
+			+max-screen($mq_menu)
+				width: 100%
+				padding-left: 0
+				padding-top: 0
+				padding-bottom: 10px
+
+
+		&_info
+			margin-left: auto
+			display: flex
+			+max-screen($mq_menu)
+				margin-left: 0
+				padding-top: 0
+				padding-bottom: 10px
+
+	&__social
+		display: flex
+		align-items: center
+		padding-right: 20px
+
+	&__acts
+		width: 227px
+		display: flex
+		flex-wrap: wrap
+		align-content: center
+
 /* header
+/* ---------------------------------------END--- */
+
+/* org-name
+/* --------------------------------------------- */
+
+.org-name
+	padding-top: 10px
+	+max-screen($mq_menu)
+		padding-top: 0
+
+/* org-name
+/* ---------------------------------------END--- */
+
+
+/* social
+/* --------------------------------------------- */
+
+.social
+	margin: 0
+	padding: 0
+	list-style-type: none
+	display: block
+	display: flex
+
+	&__i
+		margin: 0 0 0 9px
+		padding: 0
+		
+
+	&__a
+		display: block
+		border-bottom: none
+
+		img
+			display: block
+		
+
+/* social
+/* ---------------------------------------END--- */
+
+
+/* logo
+/* --------------------------------------------- */
+
+.logo
+	border-bottom: none
+
+	&__img
+		width: 157px
+		display: block
+
+/* logo
 /* ---------------------------------------END--- */
 
 
@@ -262,7 +376,7 @@
 		height: $nav_h
 		line-height: $nav_h
 		text-align: center
-		padding: 0 25px
+		padding: 0 15px
 		white-space: nowrap
 		outline: none
 		+link-color ($color: $color_text, $color_hover: #fff, $color_visited: none)
@@ -367,20 +481,162 @@
 
 	&__i
 		margin: 0
-		padding: 0
+		padding: 9px 0
 		list-style-type: none
 		display: flex
-	
+		border-top: 1px solid $color_border
+		&:first-child
+			padding-top: 0
+			border-top: none
+		&:last-child
+			padding-bottom: 0
+
+		+max-screen($mq_teasers)
+			display: block
+
 	&__photo
-		
+		+max-screen($mq_teasers)
+			margin-bottom: 10px
+
+	&__img
+		display: block
+		min-width: 200px
 
 	&__body
-		width: 100%		
+		width: 100%
+		padding-left: 20px
+		position: relative
+		+max-screen($mq_teasers)
+			padding-left: 0
+
+	&__i_more-link &__body
+		padding-bottom: 20px
+		
 
 	&__h
+		border-bottom: none
+		display: inline-block
+		margin-bottom: 5px
+		@extend %font-sb
 		
 	&__date
-		
+		margin-bottom: 5px
+		color: $color_text_light
+
+	&__more
+		position: absolute
+		text-align: right
+		right: 0
+		bottom: 0
+
+	&__more-a
+		+link-color ($color: $color_text, $color_visited: none)
 
 /* teasers
+/* ---------------------------------------END--- */
+
+
+/* more
+/* --------------------------------------------- */
+
+.more
+	text-align: right
+	&__a
+		+link-color ($color: $color_text, $color_visited: none)
+
+/* more
+/* ---------------------------------------END--- */
+
+
+/* photo
+/* --------------------------------------------- */
+
+.photo
+	margin-bottom: $section_space
+
+	&__img
+		display: block
+
+/* photo
+/* ---------------------------------------END--- */
+
+
+/* date-teasers
+/* --------------------------------------------- */
+
+.date-teasers
+	margin: 0
+	padding: 0
+	list-style-type: none
+
+	&__i
+		margin: 0 0 10px 0
+		padding: 0
+		&:last-child
+			margin-bottom: 0
+
+	&__body
+		display: flex
+		border-bottom: none
+
+	&__body:hover &__date,
+	&__date:hover
+		color: $link_color_hover
+		+transition-duration($animation-time_fast)
+
+	&__date
+		color: $color_text_light
+		padding-right: 15px
+		+transition-property(color)
+		+transition-duration($animation-time)
+
+/* date-teasers
+/* ---------------------------------------END--- */
+
+
+/* photo-teasers
+/* --------------------------------------------- */
+
+.photo-teasers
+	margin: 0
+	padding: 0
+	list-style-type: none
+
+	&__i
+		margin-bottom: 15px
+		&:last-child
+			margin-bottom: 0
+	
+	&__body
+		display: block
+		border-bottom: none
+
+	&__photo
+		margin-bottom: 5px
+
+	&__img
+		display: block
+		
+	&__legend
+		@extend %font-sb
+		
+
+/* photo-teasers
+/* ---------------------------------------END--- */
+
+
+/* link-header
+/* --------------------------------------------- */
+
+.link-header
+	display: flex
+	&__h
+		
+	&__link
+		margin-left: auto
+
+	&__a		
+		+link-color ($color: $color_text, $color_visited: none)
+
+/* link-header
 /* ---------------------------------------END--- */
