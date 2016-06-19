@@ -1026,3 +1026,131 @@ body
 
 /* persons
 /* ---------------------------------------END--- */
+
+
+/* contacts
+/* --------------------------------------------- */
+
+.contacts
+	display: flex
+	margin-bottom: 30px
+	+max-screen($mq_contacts)
+		display: block
+
+	&__col
+		box-sizing: border-box
+		&_one
+			width: 24%
+			+max-screen($mq_contacts)
+				width: auto
+			
+		&_two
+			width: 36%
+			+max-screen($mq_contacts)
+				width: auto
+			
+		&_three
+			width: 40%
+			padding-left: 70px
+			+max-screen($mq_contacts)
+				width: auto
+				padding-left: 0
+		
+
+	&__i
+		display: flex
+		+max-screen($mq_contacts)
+			margin-bottom: 10px
+
+	&__label
+		font-weight: bold
+		display: inline-block
+		padding-right: 7px
+		box-sizing: border-box
+		width: 35%
+		text-align: right
+		white-space: nowrap
+		+max-screen($mq_contacts)
+			width: auto
+
+		&_more
+			width: 40%
+			+max-screen($mq_contacts)
+				width: auto
+
+	&__value
+		width: 65%
+		+max-screen($mq_contacts)
+
+/* contacts
+/* ---------------------------------------END--- */
+
+
+/* file
+/* --------------------------------------------- */
+
+.file
+	+link-color ($color: $color_text, $color_visited: none)
+	display: inline-block
+	border-bottom: none
+	position: relative
+	padding: 6px 0
+	padding-left: (24px + 10px)
+	padding-right: 20px
+
+	&__icon-wrap
+		display: block
+		width: 24px
+		height: 30px
+		position: absolute
+		top: 0
+		left: 0
+
+	&_doc &__icon
+		color: $color_main
+
+	&_pdf &__icon
+		color: #e53935
+
+	&_xls &__icon
+		color: #388e3c
+
+	&_xls &__icon
+		color: #ef6c00
+
+		
+	&__icon
+		width: 24px
+		height: 30px
+
+	&__type
+		display: block
+		position: absolute
+		bottom: 6px
+		right: 0
+		left: 0
+		+rem(font-size, 9px)
+		color: #fff
+		text-align: center
+		
+	&__h
+		@extend %font-sb
+		
+
+/* file
+/* ---------------------------------------END--- */
+
+/* map
+/* --------------------------------------------- */
+
+.map
+	margin-top: $section_space + 10
+	margin-left: -$section_space
+	margin-right: -$section_space
+	margin-bottom: -$section_space
+
+	&__body
+	
+
+/* map
+/* ---------------------------------------END--- */
