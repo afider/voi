@@ -127,6 +127,8 @@
 	box-shadow: 0 0 4px rgba(0, 0, 0, 0.4)
 	margin-bottom: 20px
 	position: relative
+	+max-screen($mq_menu)
+		padding-bottom: 20px
 
 	&__body
 		@extend %center
@@ -1153,4 +1155,259 @@ body
 	
 
 /* map
+/* ---------------------------------------END--- */
+
+
+/* input
+/* --------------------------------------------- */
+
+textarea.input
+	height: 80px
+	padding: 10px
+
+.input
+	width: 400px
+	height: 40px
+	background: #fff
+	color: $color_text
+	padding: 0 10px
+	+rem(font-size, 16px)
+	@extend %bszbb
+	+transition-property(box-shadow, border-color)
+	border: 1px solid $color_border_2
+	+transition-duration($animation-time)
+	+max-screen($mq_input)
+		width: 100%
+	
+
+	&_w_fluid
+		width: 100%
+
+	&_error
+		border-color: $color_imp
+
+	&:focus
+		outline: 0 !important
+		border-color: $color_main
+
+
+/* input
+/* ---------------------------------------END--- */
+
+
+/* required
+/* --------------------------------------------- */
+
+.required
+	color: $color_imp
+
+/* required
+/* ---------------------------------------END--- */
+
+
+/* form-line
+/* --------------------------------------------- */
+
+.form-line
+	margin-bottom: 20px
+
+	&__label
+		display: block
+		margin-bottom: 5px
+		font-style: italic
+
+
+/* form-line
+/* ---------------------------------------END--- */
+
+
+/* button
+/* --------------------------------------------- */
+
+.button
+	-webkit-touch-callout: none
+	-webkit-user-select: none
+	-khtml-user-select: none
+	-moz-user-select: none
+	-ms-user-select: none
+	user-select: none
+
+	position: relative
+	display: inline-block
+	overflow: visible
+	border: none
+	color: #fff !important
+	text-align: center
+	text-decoration: none
+	cursor: pointer
+	vertical-align: middle
+	letter-spacing: 1px
+	outline: none
+	+rem(font-size, 14px)
+	text-transform: uppercase
+	padding: 0 50px
+	height: 40px
+	line-height: 40px
+	white-space: nowrap
+	background-color: $color_main
+	border: none
+	font-weight: bold
+	@extend %bszbb
+	border-radius: 2px
+	+transition-property(border-color, color)
+	+transition-duration($animation-time)
+	+transition-timing-function(ease-out)
+
+	&:hover
+		
+
+	&:active
+		+box-shadow(inset 0px 3px 7px rgba(#000, .2))
+		line-height: 42px
+	
+
+/* button
+/* ---------------------------------------END--- */
+
+
+/* txt-to-center
+/* --------------------------------------------- */
+
+.txt-to-center
+	text-align: center
+
+/* txt-to-center
+/* ---------------------------------------END--- */
+
+
+/* reviews
+/* --------------------------------------------- */
+
+.reviews
+	display: flex
+	flex-wrap: wrap
+	margin: 0 -10px
+	+max-screen($mq_reviews)
+		display: block
+
+	&__i
+		padding: 0 10px
+		box-sizing: border-box
+
+		&_input
+			width: 50%
+			+max-screen($mq_reviews)
+				width: auto
+			
+		&_message
+			width: 100%
+			+max-screen($mq_reviews)
+				width: auto
+
+/* reviews
+/* ---------------------------------------END--- */
+
+
+/* separator
+/* --------------------------------------------- */
+
+.separator
+	height: 1px
+	background: $color_border_2
+	margin-top: $section_space + 10
+	margin-bottom: $section_space + 10
+	margin-left: -$section_space
+	margin-right: -$section_space
+
+/* separator
+/* ---------------------------------------END--- */
+
+
+/* comments
+/* --------------------------------------------- */
+
+.comments
+	margin-bottom: 20px
+
+	&__legend
+		text-align: right
+		font-style: italic
+		margin-bottom: 25px
+
+	&__i
+		margin-bottom: 20px
+
+	&__header
+		font-style: italic
+		color: $color_text_light
+
+	&__more
+		text-align: center
+		a
+			+link-color ($color: $color_text, $color_visited: none)
+
+/* comments
+/* ---------------------------------------END--- */
+
+
+
+/* table
+/* --------------------------------------------- */
+
+.table 
+	width: 100%
+	margin-bottom: $content_bot_space
+
+	&.small-only
+		display: none
+		+max-screen($mq_table)
+			display: table
+
+	&.large-only
+		+max-screen($mq_table)
+			display: none
+
+	&.small-only
+		border: 1px solid #dfdfdf
+		margin-bottom: 20px
+		&:first-child
+			display: none
+		&:last-child
+			margin-bottom: 30px
+
+	&__h td,
+	th,
+	thead th
+		text-transform: uppercase
+		text-align: center
+		font-weight: normal
+
+	& th,
+	& td
+		vertical-align: middle
+		padding: 10px
+		border: 1px solid #dfdfdf
+
+	&.small-only th,
+	&.small-only td
+		padding-left: 10px
+		padding-right: 10px
+		text-align: left
+	
+
+	.st-key
+		width: 40%
+
+	.st-val
+		width: 60%
+
+	&.small-only
+		tr
+			&:first-child
+				td
+					font-weight: bold
+	
+
+
+/* table
 /* ---------------------------------------END--- */

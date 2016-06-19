@@ -15,6 +15,9 @@ $(function() {
 
 	// кастомные селекты
 	$('.js-select').customSelect();
+
+	// инициализация плагина для адаптивных таблиц
+	$('.table_responsive').cardtable();
 });
 
 
