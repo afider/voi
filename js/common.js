@@ -12,6 +12,9 @@ $(function() {
 	    self.toggleClass('is-open');
 	    target.toggleClass('is-open');
 	});
+
+	// кастомные селекты
+	$('.js-select').customSelect();
 });
 
 

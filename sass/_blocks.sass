@@ -166,17 +166,24 @@
 				margin-left: 0
 				padding-top: 0
 				padding-bottom: 10px
+			+max-screen($mq_info)
+				display: block
+
 
 	&__social
 		display: flex
 		align-items: center
 		padding-right: 20px
+		+max-screen($mq_info)
+			margin-bottom: 10px
 
 	&__acts
-		width: 227px
+		width: 285px
 		display: flex
 		flex-wrap: wrap
 		align-content: center
+		+max-screen($mq_info_sm)
+			display: block
 
 /* header
 /* ---------------------------------------END--- */
@@ -352,7 +359,7 @@
 		display: block !important
 	
 	&__lst
-		margin: 0
+		margin: 0 -15px
 		padding: 0
 		list-style-type: none
 		display: table
@@ -639,4 +646,174 @@
 		+link-color ($color: $color_text, $color_visited: none)
 
 /* link-header
+/* ---------------------------------------END--- */
+
+
+/* info
+/* --------------------------------------------- */
+
+.info
+	padding-top: 4px
+	&__phone
+		display: inline-block
+		margin-right: 20px
+		+max-screen($mq_info_sm)
+			display: block
+		
+	&__phone-icon
+		width: 18px
+		height: 18px
+		position: relative
+		top: 4px
+		color: $color_main
+		margin-right: 4px
+		
+	&__address
+		display: inline-block
+		+max-screen($mq_info_sm)
+			display: block
+			padding-top: 4px
+
+	&__address-icon
+		width: 13px
+		height: 18px
+		position: relative
+		top: 4px
+		color: $color_main
+
+	a
+		+link-color ($color: $color_text, $color_visited: none)
+		
+
+/* info
+/* ---------------------------------------END--- */
+
+
+/* eye
+/* --------------------------------------------- */
+
+.eye
+	position: relative
+	display: inline-block
+
+	&__icon
+		position: relative
+		width: 22px
+		height: 17px
+		top: 4px
+		margin-right: 4px
+		color: $color_main
+
+	a
+		display: inline-block
+		+link-color ($color: $color_text, $color_visited: none)
+
+/* eye
+/* ---------------------------------------END--- */
+
+
+/* select
+/* --------------------------------------------- */
+
+.lang-switcher
+	margin-right: 28px
+
+	
+
+.select
+	border: none
+	cursor: pointer
+	display: inline-block
+	vertical-align: middle
+	position: relative
+	display: inline-block
+	width: 350px
+	@extend %bszbb
+	background: #fff
+	text-align: left
+
+	&.lang-switcher
+		width: 40px
+		+max-screen($mq_info_sm)
+			display: block
+		
+
+	&_w_fluid
+		width: 100% !important
+
+	&__select
+		cursor: pointer
+		position: relative
+		z-index: 10
+		height: 30px
+		border: 0
+		+opacity(0)
+		width: 100% !important
+		.lang-switcher &
+			line-height: 24px
+			height: 24px
+
+	&__item
+		position: absolute
+		top: 0
+		left: 0
+		display: inline-block
+		+rem(font-size, 14px)
+		width: 100%
+		span span
+			display: block
+			overflow: hidden
+			text-overflow: ellipsis
+			white-space: nowrap
+			.lang-switcher &
+				overflow: visible
+
+	&__bg
+		display: block
+		padding: 0 25px 0 14px
+		line-height: 30px
+		height: 30px
+		@extend %bszbb
+
+		.lang-switcher &
+			color: $color_main
+			font-weight: bold
+			padding: 0 14px 0 5px
+			line-height: 24px
+			height: 24px
+
+	&__arrow
+		position: absolute
+		right: 0
+		top: 0
+		bottom: 0
+		width: 10px
+		.lang-switcher &
+			width: 8px
+			&:before
+				content: ''
+				display: block
+				position: absolute
+				top: 10px
+				left: 0
+				width: 0
+				height: 0
+				border-style: solid
+				border-width: 4px 4px 0 4px
+				border-color: #007bff transparent transparent transparent
+
+		
+	&__icon
+		width: 11px
+		height: 7px
+		position: absolute
+		top: 50%
+		margin-top: -3px
+		left: 50%
+		margin-left: -5px
+		color: red
+
+
+
+/* select
 /* ---------------------------------------END--- */

@@ -8,6 +8,7 @@
 		<link rel="stylesheet" href="css/common.css">
 		<script src="js/svg.js"></script>
 		<script src="js/jquery-2.1.4.min.js"></script>
+		<script src="js/jquery.customselect.js"></script>
 		<script src="js/common.js"></script>
 	</head>
 
@@ -56,9 +57,30 @@
 							</ul>
 						</div>
 						<div class="header__acts">
-							<div>Версия для слабовидящих</div>
-							<div>8 (3467) 32-61-82
-								ул. Чехова, 67</div>
+							<select name="lang" id="lang" class="js-select lang-switcher">
+								<option value="ru">RU</option>
+								<option value="EN">EN</option>
+							</select>
+							<div class="eye">
+								<svg class="eye__icon">
+									<use xlink:href="#icon_eye"></use>
+								</svg>
+								<a href="#">Версия для слабовидящих</a>
+							</div>
+							<div class="info">
+								<div class="info__phone">
+									<svg class="info__phone-icon">
+										<use xlink:href="#icon_phone"></use>
+									</svg>
+									<a href="tel: 8 (3467) 32-61-82">8 (3467) 32-61-82</a>
+								</div>
+								<div class="info__address">
+									<svg class="info__phone-icon">
+										<use xlink:href="#icon_location"></use>
+									</svg>
+									ул. Чехова, 67
+								</div>
+							</div>
 						</div>
 					</div>
 
