@@ -51,7 +51,7 @@
 .page
 	position: relative
 	background: $color_bg
-	padding-bottom: 1px
+	padding-bottom: 20px
 
 	img
 		max-width: 100%
@@ -59,7 +59,8 @@
 
 	&__header
 		
-
+	&__body
+		@extend %center
 		
 /* page
 /* ---------------------------------------END--- */
@@ -69,7 +70,6 @@
 /* --------------------------------------------- */
 
 .cools
-	@extend %center
 	display: flex
 	+max-screen($mq_menu)
 		display: block
@@ -367,6 +367,7 @@
 
 		+max-screen($mq_menu)
 			display: block
+			margin: 0
 		
 	&__i
 		margin: 0
@@ -525,19 +526,40 @@
 		display: inline-block
 		margin-bottom: 5px
 		@extend %font-sb
+
+		&_size_big
+			+rem(font-size, 16px)
 		
 	&__date
 		margin-bottom: 5px
 		color: $color_text_light
 
-	&__more
+	&__i_more-link &__more
 		position: absolute
 		text-align: right
 		right: 0
 		bottom: 0
+		padding-top: 0
+
+	&__more
+		padding-top: 10px
 
 	&__more-a
 		+link-color ($color: $color_text, $color_visited: none)
+
+	&__props
+		
+	&__props-i
+		margin-bottom: 5px
+
+	&__prop-label
+		color: $color_text_light
+		display: inline-block
+
+	&__prop-value
+		display: inline-block
+		a
+			+link-color ($color: $color_text, $color_visited: none)
 
 /* teasers
 /* ---------------------------------------END--- */
@@ -816,4 +838,191 @@
 
 
 /* select
+/* ---------------------------------------END--- */
+
+
+/* breadcrumbs
+/* --------------------------------------------- */
+
+.breadcrumbs
+
+	&__lst
+		margin: 0
+		padding: 0
+		list-style-type: none
+		
+	&__i
+		margin: 0 0 18px 0
+		padding: 0
+		display: inline-block
+
+	&__a
+		display: inline-block
+		+link-color ($color: $color_text, $color_visited: none)
+
+	&__icon
+		display: inline-block
+		width: 10px
+		height: 10px
+		color: #9d9d9d
+		margin: 0 17px 0 20px
+
+
+/* breadcrumbs
+/* ---------------------------------------END--- */
+
+
+/* page-nav
+/* --------------------------------------------- */
+
+.page-nav
+	text-align: center
+	padding: 24px 0
+
+	&__lst
+		margin: 0
+		padding: 0
+		list-style-type: none
+		
+	&__i
+		margin: 0
+		padding: 0
+		display: inline-block
+
+
+		
+		
+	&__a
+		display: block
+		padding: 3px 10px
+		border: 1px solid transparent
+		+link-color ($color_visited: none)
+
+		.is-active > &
+			border-color: $color_main
+	
+	&__i_prev &__icon
+		+rotate(180deg)
+
+	&__icon
+		display: inline-block
+		width: 12px
+		height: 12px
+
+/* page-nav
+/* ---------------------------------------END--- */
+
+
+/* detail
+/* --------------------------------------------- */
+
+.detail
+	display: flex
+	margin-bottom: 20px
+	+max-screen($mq_detail)
+		display: block
+
+	&__photos
+		width: 52%
+		+max-screen($mq_detail)
+			width: auto
+			margin-bottom: 20px
+		
+	&__legend
+		width: 48%
+		padding-left: 20px
+		+max-screen($mq_detail)
+			width: auto
+			padding-left: 0
+			
+
+/* detail
+/* ---------------------------------------END--- */
+
+
+/* gallery
+/* --------------------------------------------- */
+
+$gallery_arrows_dim: 40px
+.gallery
+
+body
+	.fotorama__arr
+		width: 15%
+		height: 100%
+		top: 16px
+		//margin-top: -50px
+		background: none
+		//+opacity(.5)
+
+		&:before
+			content: ''
+			display: block
+			position: absolute
+			top: 50%
+			margin-top: - $gallery_arrows_dim / 2
+			width: $gallery_arrows_dim
+			height: $gallery_arrows_dim
+			
+			//background: red
+	
+	.fotorama__arr--prev
+		left: 0
+		&:before
+			left: 10px
+			//margin-left: - $gallery_arrows_dim / 2
+			background: url("../img/previous-big.svg") 0 0 no-repeat
+			background-size: cover
+
+
+	.fotorama__arr--next
+		right: 0
+		&:before
+			right: 10px
+			//margin-right: - $gallery_arrows_dim / 2
+			background: url("../img/next-big.svg") 0 0 no-repeat
+			background-size: cover
+
+
+
+/* gallery
+/* ---------------------------------------END--- */
+
+
+/* persons
+/* --------------------------------------------- */
+
+.persons
+	&__lst
+		margin: 0 -10px
+		padding: 0
+		list-style-type: none
+		display: flex
+		flex-wrap: wrap
+		
+	&__i
+		margin: 0 0 24px 0
+		padding: 0 10px
+		width: (100%/4)
+		box-sizing: border-box
+		+max-screen($mq_persons)
+			width: (100%/3)
+		+max-screen($mq_persons_m)
+			width: (100%/2)
+		+max-screen($mq_persons_sm)
+			width: (100%/1)
+		
+	&__img
+		display: block
+		margin-bottom: 10px
+
+	&__name
+		+rem(font-size, 18px)
+		line-height: 1.2
+		margin-bottom: 5px
+		
+	&__post
+		color: $color_text_light
+
+/* persons
 /* ---------------------------------------END--- */
